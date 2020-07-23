@@ -30,13 +30,13 @@ function Header( props ) {
 */
 
 // ES6 arrow function
-const Header = ( props ) => {
-    console.log( props );
-    console.log ( props.cityName );
+const Header = ( { cityName } ) => {
+    // console.log( props );
+    // console.log ( props.cityName );
 
     // Parameter props will be in this form
     // props = { cityName: 'Seoul' };
-    const { cityName } = props;
+    // const { cityName } = props;
 
     return (
         < header className="App-header" >
