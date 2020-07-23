@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import Header from './components/Header';
 
-import Navigation from './components/Navigation';
+// import Navigation from './components/Navigation';
 import Home from './components/Home';
 import About from './components/About';
 
@@ -15,7 +15,7 @@ const RouterApp = () => {
 
             { /* <Navigation /> */ }
             <Route exact path="/" component={Home} />
-            { /* <Route path = "/about" component = {About} /> */ }
+            <Route path = "/about" component = {About} />
         </div>
   );
 };
