@@ -1,8 +1,10 @@
 import React from 'react';
 class Cities extends React.Component {
-  componentDidMount() {
+    // componentDidMount() runs when Cities has been mounted.
+    componentDidMount() {
     console.log('City component');
   }
+
   render() {
     return (
       <div>
