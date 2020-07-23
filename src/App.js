@@ -6,7 +6,7 @@ function App() {
   
   return (
     <div className="App">
-      <Header />
+      <Header cityName="Seoul"/>
       <p>Hello World!</p>
     </div>
   );
