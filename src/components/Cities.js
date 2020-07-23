@@ -1,4 +1,5 @@
 import React from 'react';
+import CityList from "./CityList";
 
 const API_CITIES = 'http://localhost:8080/weather-crawler/available-cities/';
 
@@ -34,7 +35,7 @@ class Cities extends React.Component {
             <div>
                 <h1>Cities</h1>
                 <p>City list</p>
-                <div>{cities.join(" ")}</div>
+                <CityList cities = {cities} />
             </div>
         );
     }
