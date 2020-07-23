@@ -1,11 +1,16 @@
 import React from 'react';
 
-const API_CITIES = 'http://localhost:8888/weather-crawler/available-cities';
+const API_CITIES = 'http://localhost:8080/weather-crawler/available-cities/';
 
 class Cities extends React.Component {
     // componentDidMount() runs when Cities has been mounted.
     componentDidMount() {
-    console.log(API_CITIES);
+    console.log("City component");
+
+    const cities = fetch(API_CITIES)
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+    console.log(cities);
   }
 
   render() {
