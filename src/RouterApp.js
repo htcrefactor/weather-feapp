@@ -11,6 +11,7 @@ const RouterApp = () => {
     const cityName = "Seoul";
     return (
         <div className="App">
+            <Navigation />
             <Header cityName={cityName} />
             <p>Hello World!</p>
 
