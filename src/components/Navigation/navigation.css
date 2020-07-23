@@ -6,4 +6,5 @@
 
 .navigation li {
     display: inline-block;
+    margin: 1 0em;
 }
