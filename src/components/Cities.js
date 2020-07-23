@@ -1,43 +1,40 @@
-import React from 'react';
+import React from "react";
+import { Switch, Route, withRouter } from "react-router";
 import CityList from "./CityList";
+import Weather from "./Weather/index";
 
-const API_CITIES = 'http://localhost:8080/weather-crawler/available-cities/';
+const API_CITIES = "http://localhost:8080/weather-crawler/available-cities";
 
 class Cities extends React.Component {
-    state = {
-        cities: []
-    }
-
-    // componentDidMount() runs when Cities has been mounted.
-    componentDidMount() {
-        console.log("City component");
-
-        console.log(this.state.cities);
-
-        const { cities } = this.state;
-        console.log(cities);
-
-        const citiesData = fetch(API_CITIES)
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data)
-                this.setState({
-                    cities: data,
-                });
-            });
-
-        console.log(cities);
-    }
-
-    render() {
-        const { cities } = this.state;
-        return (
-            <div>
-                <h1>Cities</h1>
-                <p>City list</p>
-                <CityList cities = {cities} />
-            </div>
-        );
-    }
+  state = {
+    cities: [],
+  };
+  componentDidMount() {
+    console.log("City component");
+    // console.log(this.state.cities);
+    const { cities } = this.state;
+    // console.log(cities);
+    const citiesData = fetch(API_CITIES)
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({
+          cities: data,
+        });
+      });
+  }
+  render() {
+    const { match } = this.props;
+    const { cities } = this.state;
+    return (
+      <div>
+        <h1>Cities</h1>
+        <p>City list</p>
+        <Switch>
+          <Route exact path={match.path} render={() => <CityList cities={cities} />} />
+          <Route path={`${match.path}/:cityName`} component={Weather} />
+        </Switch>
+      </div>
+    );
+  }
 }
-export default Cities;
+export default withRouter(Cities)
