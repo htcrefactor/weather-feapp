@@ -5,15 +5,18 @@ import Header from './components/Header';
 import Navigation from './components/Navigation';
 import Home from './components/Home';
 import About from './components/About';
+
 const RouterApp = () => {
-  const cityName = "Seoul";
-  return (
-    <div>
-      <Header cityName={cityName} />
-      <Navigation />
-      <Route exact path="/" component={Home} />
-      <Route path="/about" component={About} />
-    </div>
+    const cityName = "Seoul";
+    return (
+        <div className="App">
+            <Header cityName={cityName} />
+            <p>Hello World!</p>
+
+            { /* <Navigation /> */ }
+            <Route exact path="/" component={Home} />
+            { /* <Route path = "/about" component = {About} /> */ }
+        </div>
   );
 };
 export default RouterApp;

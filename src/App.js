@@ -9,10 +9,6 @@ function App() {
   return (
     <BrowserRouter>
       <RouterApp />
-    <div className="App">
-      <Header cityName={cityName}/>
-      <p>Hello World!</p>
-    </div>
     </BrowserRouter>
   );
 }
