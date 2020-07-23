@@ -1,7 +1,9 @@
 import logo from '../logo.svg';
 import React from 'react';
 
-function Header() {
+function Header( props ) {
+    console.log( props );
+    
     return (
         < header className="App-header" >
             <img src={logo} className="App-logo" alt="logo" />
