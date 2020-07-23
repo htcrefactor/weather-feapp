@@ -9,6 +9,8 @@ const Weather = (props) => {
   // react Hook << 검색
   // state, setState
 
+  // + Use Github Pages to host this site.
+
   const { cityName } = props.match.params;
   console.log(cityName);
   return (
