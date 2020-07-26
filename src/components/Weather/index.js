@@ -4,7 +4,7 @@ const Weather = (props) => {
   
   // 방법1.
   // class 형태로 변경 후 fetch 선택 도시의 날씨
-  const API_FETCH_DETAILS = "http://localhost:8080/weather-crawler/current-weathers/by-city-name/{cityName}";
+  const API_FETCH_DETAILS = "http://localhost:8080/weather-crawler/current-weathers/by-city-name/";
 
   class WeatherDetails extends React.Component {
     state = {
@@ -14,7 +14,7 @@ const Weather = (props) => {
     componentDidMount() {
       console.log("Weather Details");
 
-      const weatherDetailData = fetch(API_FETCH_DETAILS)
+      const weatherDetailData = fetch(API_FETCH_DETAILS + cityName)
       .then((res) => res.json())
       .then((data) => {
         this.setState({
@@ -22,7 +22,10 @@ const Weather = (props) => {
         });
       });
 
-      console.log(weatherinfo);
+      console.log("weatherDetailData: ", weatherDetailData);
+      console.log("cityName: ", cityName);
+      console.log("API URI: ", API_FETCH_DETAILS + cityName);
+
     }
   }
 
