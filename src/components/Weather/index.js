@@ -1,3 +1,4 @@
+/*
 import React, { Component } from "react";
 // Stateless component
 const Weather = (props) => {
@@ -11,3 +12,25 @@ const Weather = (props) => {
 };
 
 export default Weather;
+*/
+
+import React from "react";
+
+class WeatherDetails extends React.Component {
+  state = {
+    cityName: "", 
+    weatherMain: "", 
+    weatherDetails: "",
+    temp: ""
+  };
+
+  compoenentDidMount() {
+
+  }
+
+  render() {
+
+  }
+}
+
+export default WeatherDetails;
