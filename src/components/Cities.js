@@ -28,7 +28,6 @@ class Cities extends React.Component {
     return (
       <div>
         <h1>Cities</h1>
-        <p>City list</p>
         <Switch>
           <Route exact path={match.path} render={() => <CityList cities={cities} />} />
           <Route path={`${match.path}/:cityName`} component={WeatherDetails} />

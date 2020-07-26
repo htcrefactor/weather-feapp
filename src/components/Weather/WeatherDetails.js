@@ -14,7 +14,7 @@ const Weather = (props) => {
 export default Weather;
 */
 
-import React from "react";
+import React, { Component } from "react";
 
 class WeatherDetails extends React.Component {
   state = {
@@ -35,8 +35,13 @@ class WeatherDetails extends React.Component {
   }
 
   render() {
+    const { cityName } = this.props.match.params;
     return (
-      <div>This is WeatherDetails.</div>
+      <div>
+        This is WeatherDetails.
+        <p>City: { cityName }</p>
+      </div>
+      
     );
   }
 }
