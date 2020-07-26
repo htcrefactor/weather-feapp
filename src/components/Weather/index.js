@@ -8,13 +8,16 @@ const Weather = (props) => {
 
   class WeatherDetails extends React.Component {
     state = {
-      weatherinfo: { },
+       cityName: "",
+       weatherMain: "",
+       weatherDescription: "",
+       temp: ""
     };
 
     componentDidMount() {
       console.log("Weather Details");
 
-      const weatherDetailData = fetch(API_FETCH_DETAILS + cityName)
+      const weatherDetailData = fetch(API_FETCH_DETAILS + props.match.params)
       .then((res) => res.json())
       .then((data) => {
         this.setState({
@@ -24,7 +27,7 @@ const Weather = (props) => {
 
       console.log("weatherDetailData: ", weatherDetailData);
       console.log("cityName: ", cityName);
-      console.log("API URI: ", API_FETCH_DETAILS + cityName);
+      console.log("API URI: ", API_FETCH_DETAILS + props.match.params);
 
     }
   }
