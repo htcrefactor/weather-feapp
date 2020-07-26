@@ -25,7 +25,13 @@ class WeatherDetails extends React.Component {
   };
 
   compoenentDidMount() {
+    console.log("Component Loaded");
+    const { cityName } = this.props.match.params;
+    console.log("cityName = ", cityName);
 
+    this.setState({
+      cityName: cityName
+    })
   }
 
   render() {
