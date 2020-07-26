@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 // Stateless component
 const Weather = (props) => {
   
@@ -7,7 +7,23 @@ const Weather = (props) => {
   const API_FETCH_DETAILS = "http://localhost:8080/weather-crawler/current-weathers/by-city-name/{cityName}";
 
   class WeatherDetails extends React.Component {
-    
+    state = {
+      weatherinfo: { },
+    };
+
+    componentDidMount() {
+      console.log("Weather Details");
+
+      const weatherDetailData = fetch(API_FETCH_DETAILS)
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({
+          weatherinfo: data,
+        });
+      });
+
+      console.log(weatherinfo);
+    }
   }
 
 
